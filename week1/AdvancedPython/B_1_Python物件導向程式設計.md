@@ -47,6 +47,8 @@ dog.sing()
 
 # 物件導向程式設計核心觀念:封裝繼承與多形
 
+![OO-3.jpg](OO-3.jpg)
+
 ## 封裝(Encapsulation)
 ```
 將物件內部的資料隱藏起來，只能透過物件本身所提供的介面(interface)取得物件內部屬性或者方法，物件內部的細節資料或者邏輯則隱藏起來，
@@ -283,6 +285,9 @@ duck = Duck()
 duck.eat()
 ```
 ## 多型(Polymorphism)
+
+![OO-4.jpg](OO-4.jpg)
+
 ```
 資料來源
 https://medium.com/w-learning-note/%E4%BB%80%E9%BA%BC%E6%98%AF%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E4%B8%AD%E7%9A%84%E5%B0%81%E8%A3%9D-%E7%B9%BC%E6%89%BF%E5%92%8C%E5%A4%9A%E5%9E%8B%E7%89%B9%E6%80%A7-c15d4e8c567a
