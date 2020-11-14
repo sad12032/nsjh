@@ -17,6 +17,10 @@ bird = Animal("鸚鵡",1) #以 Animal 類別，建立一個名叫鸚鵡、1歲�
 bird.grow(11)     #長大1歲
 bird.sing()      #鸚鵡2歲，很會唱歌!
 ```
+
+![OO-1.jpg](OO-1.jpg)
+
+
 ## 類別(Class)與物件(object)
 ```
 class Animal():      #定義類別  
@@ -86,6 +90,9 @@ https://www.learncodewithmike.com/2020/01/python-inheritance.html
 Python繼承(Inheritance)的概念就是將各類別(Class)會共同使用的屬性(Attribute)或方法(Method)放在一個獨立的類別(Class)中，
 其它的類別(Class)透過繼承(Inheritance)的方式來擁有，降低程式碼的重複性。
 ```
+
+![OO-2.jpg](OO-2.jpg)
+
 ### 不具reusable程式
 ```
 # 汽車類別
