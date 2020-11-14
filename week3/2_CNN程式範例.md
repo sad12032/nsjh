@@ -30,27 +30,67 @@ mnist = tf.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
 ```
+```
+Training set訓練集
+(x_train, y_train)==(訓練集資料,訓練集答案)
+
+Test Data測試集
+(x_test, y_test) ==(測試集資料,測試集答案)
+```
 ### 定義模型
 ```
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),
   tf.keras.layers.Dense(128, activation='relu'),
-  tf.keras.layers.Dropout(0.2),
+# tf.keras.layers.Dropout(0.2),
   tf.keras.layers.Dense(10)
 ])
 ```
+
+### 查看模型架構
+```
+model.summary()
+```
+```
+model.summary()
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+flatten (Flatten)            (None, 784)               0         
+_________________________________________________________________
+dense (Dense)                (None, 128)               100480    
+_________________________________________________________________
+dropout (Dropout)            (None, 128)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                1290      
+=================================================================
+Total params: 101,770
+Trainable params: 101,770
+Non-trainable params: 0
+```
+```
+(784+1)*128=100480    
+(128+1)*10=1290
+```
+### 定義損失函數
 ```
 #The losses.SparseCategoricalCrossentropy loss takes a vector of logits and a True index and returns a scalar loss for each example
 
 loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 ```
-
+### 設定其他參數
 ```
 model.compile(optimizer='adam',
               loss=loss_fn,
               metrics=['accuracy'])
 ```
-
+```
+optimizer=最佳化演算法
+loss=損失函數
+metrics=評估指標
+    accuracy==答對的比率
+```
 ### 使用fit()進行訓練
 ```
 model.fit(x_train, y_train, epochs=5)
